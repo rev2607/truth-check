@@ -1,39 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TruthCheck</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>TruthCheck</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+   <div class="chat-container">
+      <h1>TruthCheck</h1>
+      
+      <!-- Chat messages will go here -->
+      <div class="chat-box">
+         {% if user_input %}
+            <div class="chat-message user-message">
+               <p>{{ user_input }}</p>
+            </div>
+         {% endif %}
 
-    <h1>TruthCheck</h1>
+         {% if result %}
+            <div class="chat-message ai-message">
+               <p><strong>🧠 Gemini says:</strong></p>
+               {% for section, lines in result.items() %}
+                  <div class="result-section">
+                     <strong>{{ section }}:</strong>
+                     {% if section == "Source(s)" %}
+                        <ul>
+                           {% for line in lines %}
+                              <li><a href="{{ line }}" target="_blank">{{ line }}</a></li>
+                           {% endfor %}
+                        </ul>
+                     {% else %}
+                        <p>{{ lines|join('<br>')|safe }}</p>
+                     {% endif %}
+                  </div>
+               {% endfor %}
+            </div>
+         {% endif %}
+      </div>
 
-    <form method="POST">
-        <textarea name="user_input" rows="5" cols="50" placeholder="Paste tweet, news, or claim here...">{{ user_input or '' }}</textarea><br><br>
-        <button type="submit">Check with AI</button>
-    </form>
-
-    {% if result %}
-    <div class="result-container">
-        <h3>🧠 Gemini says:</h3>
-        {% for section, lines in result.items() %}
-            <h4>{{ section }}</h4>
-            {% if section == "Source(s)" %}
-                <ul>
-                    {% for line in lines %}
-                        <li><a href="{{ line }}" target="_blank">{{ line }}</a></li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>
-                    {% for line in lines %}
-                        {{ line }}<br>
-                    {% endfor %}
-                </p>
-            {% endif %}
-        {% endfor %}
-    </div>
-    {% endif %}
-
+      <!-- Input form -->
+      <form method="POST" class="input-form">
+         <textarea name="user_input" rows="3" cols="50" placeholder="Paste tweet, news, or claim here...">{{ user_input or '' }}</textarea><br>
+         <button type="submit">Check with AI</button>
+      </form>
+   </div>
 </body>
 </html>
