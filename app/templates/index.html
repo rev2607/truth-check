@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TruthCheck</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>TruthCheck</h1>
+
+    <form method="POST">
+        <textarea name="user_input" rows="5" cols="50" placeholder="Paste tweet, news, or claim here...">{{ user_input or '' }}</textarea><br><br>
+        <button type="submit">Check with AI</button>
+    </form>
+
+    {% if result %}
+    <div class="result-container">
+        <h3>🧠 Gemini says:</h3>
+        {% for section, lines in result.items() %}
+            <h4>{{ section }}</h4>
+            <p>
+                {% for line in lines %}
+                    {{ line }}<br>
+                {% endfor %}
+            </p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</body>
+</html>
