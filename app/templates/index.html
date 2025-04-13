@@ -18,11 +18,19 @@
         <h3>🧠 Gemini says:</h3>
         {% for section, lines in result.items() %}
             <h4>{{ section }}</h4>
-            <p>
-                {% for line in lines %}
-                    {{ line }}<br>
-                {% endfor %}
-            </p>
+            {% if section == "Source(s)" %}
+                <ul>
+                    {% for line in lines %}
+                        <li><a href="{{ line }}" target="_blank">{{ line }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>
+                    {% for line in lines %}
+                        {{ line }}<br>
+                    {% endfor %}
+                </p>
+            {% endif %}
         {% endfor %}
     </div>
     {% endif %}
