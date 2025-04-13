@@ -6,17 +6,17 @@ Styled like ChatGPT or WhatsApp to make it familiar, fast, and Gen Z-friendly.
 
 ---
 
-## ✨ Features
+## Features
 
-- ✅ **Instant AI Fact-Checking** using Google’s Gemini 2.0
-- 💬 **Chat UI Inspired by ChatGPT & WhatsApp**
-- 🧠 **Structured AI Reasoning** with citations & verdict
-- 🔂 **Session-Based Chat History**
-- 🧑‍🎓 Perfect for hackathons, media literacy apps, or social impact tools
+- **Instant AI Fact-Checking** using Google’s Gemini 2.0
+- **Chat UI Inspired by ChatGPT & WhatsApp**
+- **Structured AI Reasoning** with citations & verdict
+- **Session-Based Chat History**
+- Perfect for hackathons, media literacy apps, or social impact tools
 
 ---
 
-## 🧠 Tech Stack
+## Tech Stack
 
 | Layer     | Stack                      |
 |-----------|----------------------------|
@@ -27,7 +27,7 @@ Styled like ChatGPT or WhatsApp to make it familiar, fast, and Gen Z-friendly.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repo
 
@@ -72,7 +72,7 @@ Then go to:
 
 ---
 
-## 💡 Inspiration
+## Inspiration
 
 We live in an age where misinformation spreads faster than truth. From viral TikTok clips to politically charged tweets and WhatsApp forwards, it’s becoming harder to tell fact from fiction. We wanted to build something *fast*, *familiar*, and *frictionless* — a tool that doesn’t feel like “another fact-checking site,” but like texting a friend who’s always right.
 
@@ -81,7 +81,7 @@ A Gen Z-friendly, chat-based AI assistant that tells you if that “news” you 
 
 ---
 
-## 🧠 What It Does
+## What It Does
 
 TruthCheck AI is an **AI-powered real-time fact-checking assistant** that:
 
@@ -89,9 +89,9 @@ TruthCheck AI is an **AI-powered real-time fact-checking assistant** that:
 - Uses **Google’s Gemini 2.0** to verify the claim
 - Responds in a clean **chat format**
 - Provides:
-  - ✅ **Verdict**
-  - 🧠 **Reasoning**
-  - 🌐 **Sources**
+  - **Verdict**
+  - **Reasoning**
+  - **Sources**
 
 ---
 
